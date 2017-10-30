@@ -12,7 +12,7 @@
   <body ng-controller="testCtrl as test">
     <h1>{{"Testing "+"This"}}</h1>
     <ul ng-repeat="object in test.tests">
-      <li ng-show="object.visible">{{object.name}}</li>
+      <li ng-show="object.visible">{{object.name}}: {{object.price | currency}}</li>
     </ul>
   </body>
 </html>

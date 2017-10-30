@@ -6,12 +6,15 @@
 
   var test_object = [{
     name: "test_1",
-    visible: false
+    visible: true,
+    price: 33.009
   }, {
     name: "test_2",
-    visible: true
+    visible: true,
+    price: 2.00
   }, {
     name: "test_3",
-    visible: true
+    visible: true,
+    price: 44.77
   }];
 })();
