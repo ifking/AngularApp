@@ -5,10 +5,13 @@
   });
 
   var test_object = [{
-    name: "test_1"
+    name: "test_1",
+    visible: false
   }, {
-    name: "test_2"
+    name: "test_2",
+    visible: true
   }, {
-    name: "test_3"
+    name: "test_3",
+    visible: true
   }];
-})
+})();
