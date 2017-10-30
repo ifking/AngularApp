@@ -9,11 +9,10 @@
     <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </head>
-  <body>
+  <body ng-controller="testCtrl as test">
     <h1>{{"Testing "+"This"}}</h1>
-    <ul>
-      <li>Angular JS</li>
-      <li>GIT</li>
+    <ul ng-repeat="object in test.products">
+      <li>{{object.name}}</li>
     </ul>
   </body>
 </html>
