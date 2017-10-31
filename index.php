@@ -9,7 +9,7 @@
     <script type="text/javascript" src="node_modules/angular/angular.min.js?v=<?=filemtime('node_modules/angular/angular.min.js')?>"></script>
     <script type="text/javascript" src="js/app.js?v=<?=filemtime('js/app.js')?>"></script>
   </head>
-  <body ng-controller="testCtrl as test">
+  <body ng-controller="TestCtrl as test">
     <h1>{{"Testing "+"This"}}</h1>
     <div class="list-group">
       <!-- test objects -->
@@ -19,11 +19,28 @@
           <em class="pull-right">{{object.price | currency}}</em>
         </h3>
         <!-- Handle Images -->
-        <div class="gallery img-thumbnails clearfix">
+        <div class="gallery img-thumbnails clearfix" ng-show="{{object.images.length}}">
           <div class="small-image pull-left thumbnail" ng-repeat="image in object.images">
             <img ng-src="{{image}}" />
           </div>
         </div>
+        <!-- Object details -->
+        <section class="tab" ng-controller="TabCtrl as tab">
+          <ul class="nav nav-pills">
+            <li ng-class="{active:tab.isSet(1)}">
+              <a href ng-click="tab.setTab(1)">Details</a>
+            </li>
+            <li ng-class="{active:tab.isSet(2)}">
+              <a href ng-click="tab.setTab(2)">Specs</a>
+            </li>
+          </ul>
+          <div ng-show="tab.isSet(1)">
+            <h4>Details</h4>
+          </div>
+          <div ng-show="tab.isSet(2)">
+            <h4>Specs</h4>
+          </div>
+        </section>
       </div>
     </div>
   </body>

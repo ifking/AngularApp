@@ -1,7 +1,18 @@
 (function() {
   angular.module("testApp",[])
-  .controller("testCtrl", function() {
+  .controller("TestCtrl", function() {
     this.tests = test_object;
+  })
+  .controller("TabCtrl", function() {
+    this.tab = 1;
+
+    this.setTab = function(newValue) {
+      this.tab = newValue;
+    };
+
+    this.isSet = function(tab) {
+      return this.tab===tab;
+    };
   });
 
   var test_object = [{
