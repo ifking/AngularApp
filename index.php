@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script type="text/javascript" src="node_modules/angular/angular.min.js?v=<?=filemtime('node_modules/angular/angular.min.js')?>"></script>
     <script type="text/javascript" src="js/app.js?v=<?=filemtime('js/app.js')?>"></script>
+    <script type="text/javascript" src="js/tab_ctrl.js?v=<?=filemtime('js/tab_ctrl.js')?>"></script>
   </head>
   <body ng-controller="TestCtrl as test">
     <h1>{{"Testing "+"This"}}</h1>
@@ -27,18 +28,20 @@
         <!-- Object details -->
         <section class="tab" ng-controller="TabCtrl as tab">
           <ul class="nav nav-pills">
-            <li ng-class="{active:tab.isSet(1)}">
-              <a href ng-click="tab.setTab(1)">Details</a>
+            <li class="nav-link" ng-class="{active:tab.isSet(1)}">
+              <label ng-click="tab.setTab(1)">Details</label>
             </li>
-            <li ng-class="{active:tab.isSet(2)}">
-              <a href ng-click="tab.setTab(2)">Specs</a>
+            <li class="nav-link" ng-class="{active:tab.isSet(2)}">
+              <label href ng-click="tab.setTab(2)">Specs</label>
             </li>
           </ul>
           <div ng-show="tab.isSet(1)">
             <h4>Details</h4>
+            <blockquote>{{object.description}}</blockquote>
           </div>
           <div ng-show="tab.isSet(2)">
             <h4>Specs</h4>
+            <blockquote>{{object.specs}}</blockquote>
           </div>
         </section>
       </div>

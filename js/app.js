@@ -1,18 +1,7 @@
 (function() {
-  angular.module("testApp",[])
+  angular.module("testApp",['tabModule'])
   .controller("TestCtrl", function() {
     this.tests = test_object;
-  })
-  .controller("TabCtrl", function() {
-    this.tab = 1;
-
-    this.setTab = function(newValue) {
-      this.tab = newValue;
-    };
-
-    this.isSet = function(tab) {
-      return this.tab===tab;
-    };
   });
 
   var test_object = [{
@@ -22,14 +11,20 @@
     images: [
       "img/photo_large.jpg",
       "img/photo_thumb.jpg"
-    ]
+    ],
+    description: "The best thing ever!",
+    specs: "44 X 55, 72\" height"
   }, {
     name: "test_2",
     visible: true,
-    price: 2.00
+    price: 2.00,
+    description: "Sort of not the best!",
+    specs: "1' X 1', 100\" height"
   }, {
     name: "test_3",
     visible: true,
-    price: 44.77
+    price: 44.77,
+    description: "Third to best thing!",
+    specs: "2 X 4, 30\" height"
   }];
 })();
