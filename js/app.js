@@ -7,7 +7,11 @@
   var test_object = [{
     name: "test_1",
     visible: true,
-    price: 33.009
+    price: 33.009,
+    images: [
+      "img/photo_large.jpg",
+      "img/photo_thumb.jpg"
+    ]
   }, {
     name: "test_2",
     visible: true,

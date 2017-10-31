@@ -11,8 +11,20 @@
   </head>
   <body ng-controller="testCtrl as test">
     <h1>{{"Testing "+"This"}}</h1>
-    <ul ng-repeat="object in test.tests">
-      <li ng-show="object.visible">{{object.name}}: {{object.price | currency}}</li>
-    </ul>
+    <div class="list-group">
+      <!-- test objects -->
+      <div class="list-group-item" ng-repeat="object in test.tests" ng-show="object.visible">
+        <h3>
+          {{object.name}}
+          <em class="pull-right">{{object.price | currency}}</em>
+        </h3>
+        <!-- Handle Images -->
+        <div class="gallery img-thumbnails clearfix">
+          <div class="small-image pull-left thumbnail" ng-repeat="image in object.images">
+            <img ng-src="{{image}}" />
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
