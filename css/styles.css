@@ -7,4 +7,6 @@
 }
 .flex_container .item {
   border: 1px solid #000;
+  flex-grow: 1;
+  text-align: center;
 }
