@@ -1,12 +1,21 @@
 .flex_container {
   display:flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 .flex_container .item {
   border: 1px solid #000;
-  flex-grow: 1;
+  flex: 1 1 25%;
   text-align: center;
+}
+@media(max-width:750px) {
+  .flex_container .item {
+    flex: 1 1 50%;
+  }
+}
+@media(max-width:550px) {
+  .flex_container .item {
+    flex: 1 1 100%;
+  }
 }
