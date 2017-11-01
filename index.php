@@ -17,15 +17,15 @@
           <div class="nav-content-layout">
             <div class="nav-list">
 
+              <a href="/"
+              class="list-item"
+              ng-click="selected = 'home'"
+              ng-class="{'active': selected == 'home'}"> Home </a>
+
               <a href="#!notes"
               class="list-item"
               ng-click="selected = 'notes'"
               ng-class="{'active': selected == 'notes'}"> Notes </a>
-
-              <a href="#/users"
-              class="list-item"
-              ng-click="selected = 'users'"
-              ng-class="{'active': selected == 'users'}"> Users </a>
 
             </div>
           </div>
